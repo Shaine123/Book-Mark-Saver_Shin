@@ -8,6 +8,34 @@
     <link type="image" rel="icon" href="images/bookmark.png" />
   </head>
   <body>
+    <div class="app-container">
+      <h1>Bookmark Saver</h1>
+      <div class="input-container">
+        <input
+          type="text"
+          name="bookmark-name"
+          id="bookmark-name"
+          placeholder="Bookmark Name"
+        />
+        <input
+          type="text"
+          name="bookmark-url"
+          id="bookmark-url"
+          placeholder="Bookmark URL"
+        />
+        <button id="add-btn">Add Bookmark</button>
+
+        <ul id="bookmark-list">
+          <li>
+            <div class="bookmark-item">
+              <a href="">music</a>
+              <button class="remove-btn">Remove</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
