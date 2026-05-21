@@ -66,8 +66,6 @@ body {
 #bookmark-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   margin-top: 1rem;
   list-style-type: none;
   width: 100%;
@@ -75,7 +73,29 @@ body {
 
 #bookmark-list .bookmark-item {
   display: flex;
-  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #a4a4a4a4;
+  padding: 12px;
+  border-radius: 4px;
+  background-color: #d0ffd770;
+}
+
+#bookmark-list .bookmark-item a {
+  text-decoration: none;
+  color: rgb(45, 204, 45);
+}
+
+#bookmark-list .bookmark-item .remove-btn {
+  color: white;
   background-color: red;
-  justify-content: right;
+  border: none;
+  border-radius: 4px;
+  padding: 6px;
+  cursor: pointer;
+  transition: all ease-in 0.3s;
+}
+
+#bookmark-list .bookmark-item .remove-btn:hover {
+  background-color: rgb(138, 19, 19);
 }
