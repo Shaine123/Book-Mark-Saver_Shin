@@ -66,7 +66,6 @@ body {
 #bookmark-list {
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
   list-style-type: none;
   width: 100%;
 }
@@ -79,6 +78,7 @@ body {
   padding: 12px;
   border-radius: 4px;
   background-color: #d0ffd770;
+  margin-top: 10px;
 }
 
 #bookmark-list .bookmark-item a {
