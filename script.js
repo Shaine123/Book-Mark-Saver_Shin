@@ -20,6 +20,9 @@ function addToStorage() {
 
     createBookMarkItem(name, url);
     saveToStoStorage(name, url);
+
+    bookMarkName.value = "";
+    bookMarkUrl.value = "";
   }
 }
 
@@ -27,6 +30,7 @@ function saveToStoStorage(name, url) {
   const bookMarks = getBookMarksFromStorage();
 
   bookMarks.push({
+    id: Date.now(),
     name,
     url,
   });
@@ -50,6 +54,7 @@ function createBookMarkItem(name, url) {
 
   link.href = url;
   link.textContent = name;
+  link.target = "_blank_";
 
   const btn = document.createElement("button");
 
@@ -61,6 +66,11 @@ function createBookMarkItem(name, url) {
 
   li.append(div);
   bookMarkList.append(li);
+
+  btn.onclick = () => {
+    removeBookMarkFromStorage(name, url);
+    bookMarkList.removeChild(li);
+  };
 }
 
 function loadBookMarks() {
@@ -69,4 +79,14 @@ function loadBookMarks() {
   bookMarks.forEach((bookmark) => {
     createBookMarkItem(bookmark.name, bookmark.url);
   });
+}
+
+function removeBookMarkFromStorage(name, url) {
+  let bookMarks = getBookMarksFromStorage();
+
+  bookMarks = bookMarks.filter((bookmark) => {
+    return bookmark.name !== name || bookmark.url !== url;
+  });
+
+  localStorage.setItem("bookmarks", bookMarks);
 }
